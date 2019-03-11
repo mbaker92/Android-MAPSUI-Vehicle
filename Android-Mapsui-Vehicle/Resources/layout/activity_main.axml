@@ -4,4 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+	      <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <Mapsui.UI.Android.MapControl
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:id="@+id/mapcontrol"
+            android:layout_weight="0.75" />    
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:id="@+id/linearLayout1"
+            android:layout_weight="0.25">
+			<TextView
+				android:text="TextView 1"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/text1"
+				android:paddingLeft="20px" />
+			<TextView
+				android:text="TextView 2"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/text2" 				
+			    android:paddingLeft="20px" />
+			<TextView
+				android:text="TextView3"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/text3" 
+			    android:paddingLeft="20px" />
+			<TextView
+				android:text="TextView 4"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/Text4" 
+				android:paddingLeft="20px" />
+			<TextView
+				android:text="TextView 5"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/Text5" 
+				android:paddingLeft="20px" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

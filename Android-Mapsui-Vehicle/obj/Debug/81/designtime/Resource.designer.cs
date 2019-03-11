@@ -893,8 +893,8 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F040104
 			public const int stackFromEnd = 2130968836;
 			
-			// aapt resource value: 0x7F070002
-			public const int start_with_openstreetmap = 2131165186;
+			// aapt resource value: 0x7F080002
+			public const int start_with_openstreetmap = 2131230722;
 			
 			// aapt resource value: 0x7F040105
 			public const int state_above_anchor = 2130968837;
@@ -1309,14 +1309,14 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F060026
 			public const int button_material_light = 2131099686;
 			
-			// aapt resource value: 0x7F030004
-			public const int colorAccent = 2130903044;
+			// aapt resource value: 0x7F040004
+			public const int colorAccent = 2130968580;
 			
-			// aapt resource value: 0x7F030002
-			public const int colorPrimary = 2130903042;
+			// aapt resource value: 0x7F040002
+			public const int colorPrimary = 2130968578;
 			
-			// aapt resource value: 0x7F030003
-			public const int colorPrimaryDark = 2130903043;
+			// aapt resource value: 0x7F040003
+			public const int colorPrimaryDark = 2130968579;
 			
 			// aapt resource value: 0x7F060027
 			public const int design_bottom_navigation_shadow_color = 2131099687;
@@ -1378,8 +1378,8 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F06003A
 			public const int highlighted_text_material_light = 2131099706;
 			
-			// aapt resource value: 0x7F030005
-			public const int ic_launcher_background = 2130903045;
+			// aapt resource value: 0x7F040005
+			public const int ic_launcher_background = 2130968581;
 			
 			// aapt resource value: 0x7F06003B
 			public const int material_blue_grey_800 = 2131099707;
@@ -2503,11 +2503,17 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F0C000F
 			public const int line3 = 2131492879;
 			
+			// aapt resource value: 0x7F010003
+			public const int linearLayout1 = 2130771971;
+			
 			// aapt resource value: 0x7F0C0040
 			public const int listMode = 2131492928;
 			
 			// aapt resource value: 0x7F0C0041
 			public const int list_item = 2131492929;
+			
+			// aapt resource value: 0x7F010002
+			public const int mapcontrol = 2130771970;
 			
 			// aapt resource value: 0x7F0C0042
 			public const int masked = 2131492930;
@@ -2677,8 +2683,20 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F0C0017
 			public const int text = 2131492887;
 			
-			// aapt resource value: 0x7F0C0018
-			public const int text2 = 2131492888;
+			// aapt resource value: 0x7F010004
+			public const int text1 = 2130771972;
+			
+			// aapt resource value: 0x7F010005
+			public const int text2 = 2130771973;
+			
+			// aapt resource value: 0x7F010006
+			public const int text3 = 2130771974;
+			
+			// aapt resource value: 0x7F010007
+			public const int Text4 = 2130771975;
+			
+			// aapt resource value: 0x7F010008
+			public const int Text5 = 2130771976;
 			
 			// aapt resource value: 0x7F0C007E
 			public const int textinput_counter = 2131492990;
@@ -2880,8 +2898,8 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F0F001A
 			public const int abc_select_dialog_material = 2131689498;
 			
-			// aapt resource value: 0x7F010002
-			public const int activity_main = 2130771970;
+			// aapt resource value: 0x7F020002
+			public const int activity_main = 2130837506;
 			
 			// aapt resource value: 0x7F0F001B
 			public const int design_bottom_navigation_item = 2131689499;
@@ -2998,14 +3016,14 @@ namespace Android_Mapsui_Vehicle
 		public partial class Mipmap
 		{
 			
-			// aapt resource value: 0x7F020002
-			public const int ic_launcher = 2130837506;
+			// aapt resource value: 0x7F030002
+			public const int ic_launcher = 2130903042;
 			
-			// aapt resource value: 0x7F020004
-			public const int ic_launcher_foreground = 2130837508;
+			// aapt resource value: 0x7F030004
+			public const int ic_launcher_foreground = 2130903044;
 			
-			// aapt resource value: 0x7F020003
-			public const int ic_launcher_round = 2130837507;
+			// aapt resource value: 0x7F030003
+			public const int ic_launcher_round = 2130903043;
 			
 			static Mipmap()
 			{
@@ -3107,17 +3125,17 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F15001D
 			public const int abc_toolbar_collapse_description = 2132082717;
 			
-			// aapt resource value: 0x7F040003
-			public const int action_settings = 2130968579;
+			// aapt resource value: 0x7F050003
+			public const int action_settings = 2131034115;
 			
 			// aapt resource value: 0x7F15001E
 			public const int appbar_scrolling_view_behavior = 2132082718;
 			
-			// aapt resource value: 0x7F040005
-			public const int ApplicationName = 2130968581;
+			// aapt resource value: 0x7F050005
+			public const int ApplicationName = 2131034117;
 			
-			// aapt resource value: 0x7F040002
-			public const int app_name = 2130968578;
+			// aapt resource value: 0x7F050002
+			public const int app_name = 2131034114;
 			
 			// aapt resource value: 0x7F15001F
 			public const int bottom_sheet_behavior = 2132082719;
@@ -3125,8 +3143,8 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F150020
 			public const int character_counter_pattern = 2132082720;
 			
-			// aapt resource value: 0x7F040004
-			public const int Hello = 2130968580;
+			// aapt resource value: 0x7F050004
+			public const int Hello = 2131034116;
 			
 			// aapt resource value: 0x7F150021
 			public const int password_toggle_content_description = 2132082721;
@@ -3180,8 +3198,8 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F160006
 			public const int Animation_Design_BottomSheetDialog = 2132148230;
 			
-			// aapt resource value: 0x7F050002
-			public const int AppTheme = 2131034114;
+			// aapt resource value: 0x7F060002
+			public const int AppTheme = 2131099650;
 			
 			// aapt resource value: 0x7F160007
 			public const int Base_AlertDialog_AppCompat = 2132148231;
@@ -4364,11 +4382,11 @@ namespace Android_Mapsui_Vehicle
 			public static int[] ActionBarLayout = new int[] {
 					16842931};
 			
-			// aapt resource value: 0x7F060049
-			public const int ActionBarLayout_android_layout_gravity = 2131099721;
+			// aapt resource value: 0x7F070049
+			public const int ActionBarLayout_android_layout_gravity = 2131165257;
 			
-			// aapt resource value: 0x7F060019
-			public const int ActionBar_background = 2131099673;
+			// aapt resource value: 0x7F070019
+			public const int ActionBar_background = 2131165209;
 			
 			// aapt resource value: 0x1
 			public const int ActionBar_backgroundSplit = 1;
@@ -4457,8 +4475,8 @@ namespace Android_Mapsui_Vehicle
 			public static int[] ActionMenuItemView = new int[] {
 					16843071};
 			
-			// aapt resource value: 0x7F060051
-			public const int ActionMenuItemView_android_minWidth = 2131099729;
+			// aapt resource value: 0x7F070051
+			public const int ActionMenuItemView_android_minWidth = 2131165265;
 			
 			public static int[] ActionMode = new int[] {
 					2130968626,
@@ -4468,8 +4486,8 @@ namespace Android_Mapsui_Vehicle
 					2130968847,
 					2130968901};
 			
-			// aapt resource value: 0x7F060053
-			public const int ActionMode_background = 2131099731;
+			// aapt resource value: 0x7F070053
+			public const int ActionMode_background = 2131165267;
 			
 			// aapt resource value: 0x1
 			public const int ActionMode_backgroundSplit = 1;
@@ -4490,8 +4508,8 @@ namespace Android_Mapsui_Vehicle
 					2130968704,
 					2130968746};
 			
-			// aapt resource value: 0x7F060060
-			public const int ActivityChooserView_expandActivityOverflowButtonDrawable = 2131099744;
+			// aapt resource value: 0x7F070060
+			public const int ActivityChooserView_expandActivityOverflowButtonDrawable = 2131165280;
 			
 			// aapt resource value: 0x1
 			public const int ActivityChooserView_initialActivityCount = 1;
@@ -4505,8 +4523,8 @@ namespace Android_Mapsui_Vehicle
 					2130968828,
 					2130968829};
 			
-			// aapt resource value: 0x7F060063
-			public const int AlertDialog_android_layout = 2131099747;
+			// aapt resource value: 0x7F070063
+			public const int AlertDialog_android_layout = 2131165283;
 			
 			// aapt resource value: 0x1
 			public const int AlertDialog_buttonPanelSideLayout = 1;
@@ -4537,14 +4555,14 @@ namespace Android_Mapsui_Vehicle
 					2130968838,
 					2130968839};
 			
-			// aapt resource value: 0x7F060077
-			public const int AppBarLayoutStates_state_collapsed = 2131099767;
+			// aapt resource value: 0x7F070077
+			public const int AppBarLayoutStates_state_collapsed = 2131165303;
 			
 			// aapt resource value: 0x1
 			public const int AppBarLayoutStates_state_collapsible = 1;
 			
-			// aapt resource value: 0x7F060071
-			public const int AppBarLayout_android_background = 2131099761;
+			// aapt resource value: 0x7F070071
+			public const int AppBarLayout_android_background = 2131165297;
 			
 			// aapt resource value: 0x1
 			public const int AppBarLayout_android_keyboardNavigationCluster = 1;
@@ -4562,8 +4580,8 @@ namespace Android_Mapsui_Vehicle
 					2130968765,
 					2130968766};
 			
-			// aapt resource value: 0x7F060080
-			public const int AppBarLayout_Layout_layout_scrollFlags = 2131099776;
+			// aapt resource value: 0x7F070080
+			public const int AppBarLayout_Layout_layout_scrollFlags = 2131165312;
 			
 			// aapt resource value: 0x1
 			public const int AppBarLayout_Layout_layout_scrollInterpolator = 1;
@@ -4574,8 +4592,8 @@ namespace Android_Mapsui_Vehicle
 					2130968889,
 					2130968890};
 			
-			// aapt resource value: 0x7F060083
-			public const int AppCompatImageView_android_src = 2131099779;
+			// aapt resource value: 0x7F070083
+			public const int AppCompatImageView_android_src = 2131165315;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatImageView_srcCompat = 1;
@@ -4592,8 +4610,8 @@ namespace Android_Mapsui_Vehicle
 					2130968887,
 					2130968888};
 			
-			// aapt resource value: 0x7F060088
-			public const int AppCompatSeekBar_android_thumb = 2131099784;
+			// aapt resource value: 0x7F070088
+			public const int AppCompatSeekBar_android_thumb = 2131165320;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatSeekBar_tickMark = 1;
@@ -4613,8 +4631,8 @@ namespace Android_Mapsui_Vehicle
 					16843117,
 					16842804};
 			
-			// aapt resource value: 0x7F060093
-			public const int AppCompatTextHelper_android_drawableBottom = 2131099795;
+			// aapt resource value: 0x7F070093
+			public const int AppCompatTextHelper_android_drawableBottom = 2131165331;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatTextHelper_android_drawableEnd = 1;
@@ -4644,8 +4662,8 @@ namespace Android_Mapsui_Vehicle
 					2130968720,
 					2130968869};
 			
-			// aapt resource value: 0x7F060101
-			public const int AppCompatTextView_android_textAppearance = 2131099905;
+			// aapt resource value: 0x7F070101
+			public const int AppCompatTextView_android_textAppearance = 2131165441;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatTextView_autoSizeMaxTextSize = 1;
@@ -4789,8 +4807,8 @@ namespace Android_Mapsui_Vehicle
 					2130968921,
 					2130968922};
 			
-			// aapt resource value: 0x7F060110
-			public const int AppCompatTheme_actionBarDivider = 2131099920;
+			// aapt resource value: 0x7F070110
+			public const int AppCompatTheme_actionBarDivider = 2131165456;
 			
 			// aapt resource value: 0x1
 			public const int AppCompatTheme_actionBarItemBackground = 1;
@@ -5153,8 +5171,8 @@ namespace Android_Mapsui_Vehicle
 					2130968753,
 					2130968783};
 			
-			// aapt resource value: 0x7F060230
-			public const int BottomNavigationView_elevation = 2131100208;
+			// aapt resource value: 0x7F070230
+			public const int BottomNavigationView_elevation = 2131165744;
 			
 			// aapt resource value: 0x1
 			public const int BottomNavigationView_itemBackground = 1;
@@ -5173,8 +5191,8 @@ namespace Android_Mapsui_Vehicle
 					2130968635,
 					2130968636};
 			
-			// aapt resource value: 0x7F060236
-			public const int BottomSheetBehavior_Layout_behavior_hideable = 2131100214;
+			// aapt resource value: 0x7F070236
+			public const int BottomSheetBehavior_Layout_behavior_hideable = 2131165750;
 			
 			// aapt resource value: 0x1
 			public const int BottomSheetBehavior_Layout_behavior_peekHeight = 1;
@@ -5185,8 +5203,8 @@ namespace Android_Mapsui_Vehicle
 			public static int[] ButtonBarLayout = new int[] {
 					2130968615};
 			
-			// aapt resource value: 0x7F060240
-			public const int ButtonBarLayout_allowStacking = 2131100224;
+			// aapt resource value: 0x7F070240
+			public const int ButtonBarLayout_allowStacking = 2131165760;
 			
 			public static int[] CollapsingToolbarLayout = new int[] {
 					2130968658,
@@ -5206,8 +5224,8 @@ namespace Android_Mapsui_Vehicle
 					2130968892,
 					2130968902};
 			
-			// aapt resource value: 0x7F060242
-			public const int CollapsingToolbarLayout_collapsedTitleGravity = 2131100226;
+			// aapt resource value: 0x7F070242
+			public const int CollapsingToolbarLayout_collapsedTitleGravity = 2131165762;
 			
 			// aapt resource value: 0x1
 			public const int CollapsingToolbarLayout_collapsedTitleTextAppearance = 1;
@@ -5240,8 +5258,8 @@ namespace Android_Mapsui_Vehicle
 					2130968760,
 					2130968761};
 			
-			// aapt resource value: 0x7F060259
-			public const int CollapsingToolbarLayout_Layout_layout_collapseMode = 2131100249;
+			// aapt resource value: 0x7F070259
+			public const int CollapsingToolbarLayout_Layout_layout_collapseMode = 2131165785;
 			
 			// aapt resource value: 0x1
 			public const int CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = 1;
@@ -5269,8 +5287,8 @@ namespace Android_Mapsui_Vehicle
 					16843551,
 					16843173};
 			
-			// aapt resource value: 0x7F060262
-			public const int ColorStateListItem_alpha = 2131100258;
+			// aapt resource value: 0x7F070262
+			public const int ColorStateListItem_alpha = 2131165794;
 			
 			// aapt resource value: 0x1
 			public const int ColorStateListItem_android_alpha = 1;
@@ -5283,8 +5301,8 @@ namespace Android_Mapsui_Vehicle
 					2130968650,
 					2130968651};
 			
-			// aapt resource value: 0x7F060266
-			public const int CompoundButton_android_button = 2131100262;
+			// aapt resource value: 0x7F070266
+			public const int CompoundButton_android_button = 2131165798;
 			
 			// aapt resource value: 0x1
 			public const int CompoundButton_buttonTint = 1;
@@ -5296,8 +5314,8 @@ namespace Android_Mapsui_Vehicle
 					2130968754,
 					2130968840};
 			
-			// aapt resource value: 0x7F060270
-			public const int CoordinatorLayout_keylines = 2131100272;
+			// aapt resource value: 0x7F070270
+			public const int CoordinatorLayout_keylines = 2131165808;
 			
 			public static int[] CoordinatorLayout_Layout = new int[] {
 					16842931,
@@ -5308,8 +5326,8 @@ namespace Android_Mapsui_Vehicle
 					2130968763,
 					2130968764};
 			
-			// aapt resource value: 0x7F060273
-			public const int CoordinatorLayout_Layout_android_layout_gravity = 2131100275;
+			// aapt resource value: 0x7F070273
+			public const int CoordinatorLayout_Layout_android_layout_gravity = 2131165811;
 			
 			// aapt resource value: 0x1
 			public const int CoordinatorLayout_Layout_layout_anchor = 1;
@@ -5337,8 +5355,8 @@ namespace Android_Mapsui_Vehicle
 					2130968640,
 					2130968879};
 			
-			// aapt resource value: 0x7F060281
-			public const int DesignTheme_bottomSheetDialogTheme = 2131100289;
+			// aapt resource value: 0x7F070281
+			public const int DesignTheme_bottomSheetDialogTheme = 2131165825;
 			
 			// aapt resource value: 0x1
 			public const int DesignTheme_bottomSheetStyle = 1;
@@ -5356,8 +5374,8 @@ namespace Android_Mapsui_Vehicle
 					2130968831,
 					2130968882};
 			
-			// aapt resource value: 0x7F060285
-			public const int DrawerArrowToggle_arrowHeadLength = 2131100293;
+			// aapt resource value: 0x7F070285
+			public const int DrawerArrowToggle_arrowHeadLength = 2131165829;
 			
 			// aapt resource value: 0x1
 			public const int DrawerArrowToggle_arrowShaftLength = 1;
@@ -5390,8 +5408,8 @@ namespace Android_Mapsui_Vehicle
 					2130968816,
 					2130968911};
 			
-			// aapt resource value: 0x7F060294
-			public const int FloatingActionButton_backgroundTint = 2131100308;
+			// aapt resource value: 0x7F070294
+			public const int FloatingActionButton_backgroundTint = 2131165844;
 			
 			// aapt resource value: 0x1
 			public const int FloatingActionButton_backgroundTintMode = 1;
@@ -5399,8 +5417,8 @@ namespace Android_Mapsui_Vehicle
 			public static int[] FloatingActionButton_Behavior_Layout = new int[] {
 					2130968632};
 			
-			// aapt resource value: 0x7F060303
-			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 2131100419;
+			// aapt resource value: 0x7F070303
+			public const int FloatingActionButton_Behavior_Layout_behavior_autoHide = 2131165955;
 			
 			// aapt resource value: 0x2
 			public const int FloatingActionButton_borderWidth = 2;
@@ -5436,8 +5454,8 @@ namespace Android_Mapsui_Vehicle
 					2130968584,
 					2130968585};
 			
-			// aapt resource value: 0x7F060012
-			public const int FontFamilyFont_android_font = 2131099666;
+			// aapt resource value: 0x7F070012
+			public const int FontFamilyFont_android_font = 2131165202;
 			
 			// aapt resource value: 0x1
 			public const int FontFamilyFont_android_fontStyle = 1;
@@ -5454,8 +5472,8 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x5
 			public const int FontFamilyFont_fontWeight = 5;
 			
-			// aapt resource value: 0x7F060005
-			public const int FontFamily_fontProviderAuthority = 2131099653;
+			// aapt resource value: 0x7F070005
+			public const int FontFamily_fontProviderAuthority = 2131165189;
 			
 			// aapt resource value: 0x1
 			public const int FontFamily_fontProviderCerts = 1;
@@ -5477,8 +5495,8 @@ namespace Android_Mapsui_Vehicle
 					16843264,
 					2130968729};
 			
-			// aapt resource value: 0x7F060305
-			public const int ForegroundLinearLayout_android_foreground = 2131100421;
+			// aapt resource value: 0x7F070305
+			public const int ForegroundLinearLayout_android_foreground = 2131165957;
 			
 			// aapt resource value: 0x1
 			public const int ForegroundLinearLayout_android_foregroundGravity = 1;
@@ -5497,8 +5515,8 @@ namespace Android_Mapsui_Vehicle
 					2130968782,
 					2130968826};
 			
-			// aapt resource value: 0x7F060309
-			public const int LinearLayoutCompat_android_baselineAligned = 2131100425;
+			// aapt resource value: 0x7F070309
+			public const int LinearLayoutCompat_android_baselineAligned = 2131165961;
 			
 			// aapt resource value: 0x1
 			public const int LinearLayoutCompat_android_baselineAlignedChildIndex = 1;
@@ -5524,8 +5542,8 @@ namespace Android_Mapsui_Vehicle
 					16843137,
 					16842996};
 			
-			// aapt resource value: 0x7F060319
-			public const int LinearLayoutCompat_Layout_android_layout_gravity = 2131100441;
+			// aapt resource value: 0x7F070319
+			public const int LinearLayoutCompat_Layout_android_layout_gravity = 2131165977;
 			
 			// aapt resource value: 0x1
 			public const int LinearLayoutCompat_Layout_android_layout_height = 1;
@@ -5546,8 +5564,8 @@ namespace Android_Mapsui_Vehicle
 					16843436,
 					16843437};
 			
-			// aapt resource value: 0x7F060324
-			public const int ListPopupWindow_android_dropDownHorizontalOffset = 2131100452;
+			// aapt resource value: 0x7F070324
+			public const int ListPopupWindow_android_dropDownHorizontalOffset = 2131165988;
 			
 			// aapt resource value: 0x1
 			public const int ListPopupWindow_android_dropDownVerticalOffset = 1;
@@ -5560,8 +5578,8 @@ namespace Android_Mapsui_Vehicle
 					16843231,
 					16843156};
 			
-			// aapt resource value: 0x7F060327
-			public const int MenuGroup_android_checkableBehavior = 2131100455;
+			// aapt resource value: 0x7F070327
+			public const int MenuGroup_android_checkableBehavior = 2131165991;
 			
 			// aapt resource value: 0x1
 			public const int MenuGroup_android_enabled = 1;
@@ -5603,8 +5621,8 @@ namespace Android_Mapsui_Vehicle
 					2130968825,
 					2130968907};
 			
-			// aapt resource value: 0x7F060334
-			public const int MenuItem_actionLayout = 2131100468;
+			// aapt resource value: 0x7F070334
+			public const int MenuItem_actionLayout = 2131166004;
 			
 			// aapt resource value: 0x1
 			public const int MenuItem_actionProviderClass = 1;
@@ -5683,8 +5701,8 @@ namespace Android_Mapsui_Vehicle
 					2130968805,
 					2130968842};
 			
-			// aapt resource value: 0x7F060358
-			public const int MenuView_android_headerBackground = 2131100504;
+			// aapt resource value: 0x7F070358
+			public const int MenuView_android_headerBackground = 2131166040;
 			
 			// aapt resource value: 0x1
 			public const int MenuView_android_horizontalDivider = 1;
@@ -5722,8 +5740,8 @@ namespace Android_Mapsui_Vehicle
 					2130968753,
 					2130968783};
 			
-			// aapt resource value: 0x7F060368
-			public const int NavigationView_android_background = 2131100520;
+			// aapt resource value: 0x7F070368
+			public const int NavigationView_android_background = 2131166056;
 			
 			// aapt resource value: 0x1
 			public const int NavigationView_android_fitsSystemWindows = 1;
@@ -5760,11 +5778,11 @@ namespace Android_Mapsui_Vehicle
 			public static int[] PopupWindowBackgroundState = new int[] {
 					2130968837};
 			
-			// aapt resource value: 0x7F060383
-			public const int PopupWindowBackgroundState_state_above_anchor = 2131100547;
+			// aapt resource value: 0x7F070383
+			public const int PopupWindowBackgroundState_state_above_anchor = 2131166083;
 			
-			// aapt resource value: 0x7F060379
-			public const int PopupWindow_android_popupAnimationStyle = 2131100537;
+			// aapt resource value: 0x7F070379
+			public const int PopupWindow_android_popupAnimationStyle = 2131166073;
 			
 			// aapt resource value: 0x1
 			public const int PopupWindow_android_popupBackground = 1;
@@ -5776,8 +5794,8 @@ namespace Android_Mapsui_Vehicle
 					2130968790,
 					2130968793};
 			
-			// aapt resource value: 0x7F060385
-			public const int RecycleListView_paddingBottomNoButtons = 2131100549;
+			// aapt resource value: 0x7F070385
+			public const int RecycleListView_paddingBottomNoButtons = 2131166085;
 			
 			// aapt resource value: 0x1
 			public const int RecycleListView_paddingTopNoTitle = 1;
@@ -5795,8 +5813,8 @@ namespace Android_Mapsui_Vehicle
 					2130968830,
 					2130968836};
 			
-			// aapt resource value: 0x7F060388
-			public const int RecyclerView_android_descendantFocusability = 2131100552;
+			// aapt resource value: 0x7F070388
+			public const int RecyclerView_android_descendantFocusability = 2131166088;
 			
 			// aapt resource value: 0x1
 			public const int RecyclerView_android_orientation = 1;
@@ -5831,14 +5849,14 @@ namespace Android_Mapsui_Vehicle
 			public static int[] ScrimInsetsFrameLayout = new int[] {
 					2130968747};
 			
-			// aapt resource value: 0x7F060400
-			public const int ScrimInsetsFrameLayout_insetForeground = 2131100672;
+			// aapt resource value: 0x7F070400
+			public const int ScrimInsetsFrameLayout_insetForeground = 2131166208;
 			
 			public static int[] ScrollingViewBehavior_Layout = new int[] {
 					2130968634};
 			
-			// aapt resource value: 0x7F060402
-			public const int ScrollingViewBehavior_Layout_behavior_overlapTop = 2131100674;
+			// aapt resource value: 0x7F070402
+			public const int ScrollingViewBehavior_Layout_behavior_overlapTop = 2131166210;
 			
 			public static int[] SearchView = new int[] {
 					16842970,
@@ -5859,8 +5877,8 @@ namespace Android_Mapsui_Vehicle
 					2130968848,
 					2130968912};
 			
-			// aapt resource value: 0x7F060404
-			public const int SearchView_android_focusable = 2131100676;
+			// aapt resource value: 0x7F070404
+			public const int SearchView_android_focusable = 2131166212;
 			
 			// aapt resource value: 0x1
 			public const int SearchView_android_imeOptions = 1;
@@ -5915,8 +5933,8 @@ namespace Android_Mapsui_Vehicle
 					2130968701,
 					2130968780};
 			
-			// aapt resource value: 0x7F060422
-			public const int SnackbarLayout_android_maxWidth = 2131100706;
+			// aapt resource value: 0x7F070422
+			public const int SnackbarLayout_android_maxWidth = 2131166242;
 			
 			// aapt resource value: 0x1
 			public const int SnackbarLayout_elevation = 1;
@@ -5931,8 +5949,8 @@ namespace Android_Mapsui_Vehicle
 					16843131,
 					2130968803};
 			
-			// aapt resource value: 0x7F060426
-			public const int Spinner_android_dropDownWidth = 2131100710;
+			// aapt resource value: 0x7F070426
+			public const int Spinner_android_dropDownWidth = 2131166246;
 			
 			// aapt resource value: 0x1
 			public const int Spinner_android_entries = 1;
@@ -5949,8 +5967,8 @@ namespace Android_Mapsui_Vehicle
 			public static int[] start_with_openstreetmap_style = new int[] {
 					0};
 			
-			// aapt resource value: 0x7F060002
-			public const int start_with_openstreetmap_style_start_with_openstreetmap = 2131099650;
+			// aapt resource value: 0x7F070002
+			public const int start_with_openstreetmap_style_start_with_openstreetmap = 2131165186;
 			
 			public static int[] SwitchCompat = new int[] {
 					16843045,
@@ -5968,8 +5986,8 @@ namespace Android_Mapsui_Vehicle
 					2130968909,
 					2130968910};
 			
-			// aapt resource value: 0x7F060432
-			public const int SwitchCompat_android_textOff = 2131100722;
+			// aapt resource value: 0x7F070432
+			public const int SwitchCompat_android_textOff = 2131166258;
 			
 			// aapt resource value: 0x1
 			public const int SwitchCompat_android_textOn = 1;
@@ -6015,8 +6033,8 @@ namespace Android_Mapsui_Vehicle
 					16842994,
 					16843087};
 			
-			// aapt resource value: 0x7F060447
-			public const int TabItem_android_icon = 2131100743;
+			// aapt resource value: 0x7F070447
+			public const int TabItem_android_icon = 2131166279;
 			
 			// aapt resource value: 0x1
 			public const int TabItem_android_layout = 1;
@@ -6042,8 +6060,8 @@ namespace Android_Mapsui_Vehicle
 					2130968867,
 					2130968868};
 			
-			// aapt resource value: 0x7F060451
-			public const int TabLayout_tabBackground = 2131100753;
+			// aapt resource value: 0x7F070451
+			public const int TabLayout_tabBackground = 2131166289;
 			
 			// aapt resource value: 0x1
 			public const int TabLayout_tabContentStart = 1;
@@ -6105,8 +6123,8 @@ namespace Android_Mapsui_Vehicle
 					2130968720,
 					2130968869};
 			
-			// aapt resource value: 0x7F060468
-			public const int TextAppearance_android_fontFamily = 2131100776;
+			// aapt resource value: 0x7F070468
+			public const int TextAppearance_android_fontFamily = 2131166312;
 			
 			// aapt resource value: 0x1
 			public const int TextAppearance_android_shadowColor = 1;
@@ -6162,8 +6180,8 @@ namespace Android_Mapsui_Vehicle
 					2130968800,
 					2130968801};
 			
-			// aapt resource value: 0x7F060482
-			public const int TextInputLayout_android_hint = 2131100802;
+			// aapt resource value: 0x7F070482
+			public const int TextInputLayout_android_hint = 2131166338;
 			
 			// aapt resource value: 0x1
 			public const int TextInputLayout_android_textColorHint = 1;
@@ -6241,8 +6259,8 @@ namespace Android_Mapsui_Vehicle
 					2130968899,
 					2130968900};
 			
-			// aapt resource value: 0x7F060499
-			public const int Toolbar_android_gravity = 2131100825;
+			// aapt resource value: 0x7F070499
+			public const int Toolbar_android_gravity = 2131166361;
 			
 			// aapt resource value: 0x1
 			public const int Toolbar_android_minHeight = 1;
@@ -6340,8 +6358,8 @@ namespace Android_Mapsui_Vehicle
 					2130968629,
 					2130968630};
 			
-			// aapt resource value: 0x7F060535
-			public const int ViewBackgroundHelper_android_background = 2131100981;
+			// aapt resource value: 0x7F070535
+			public const int ViewBackgroundHelper_android_background = 2131166517;
 			
 			// aapt resource value: 0x1
 			public const int ViewBackgroundHelper_backgroundTint = 1;
@@ -6354,8 +6372,8 @@ namespace Android_Mapsui_Vehicle
 					16842995,
 					16842994};
 			
-			// aapt resource value: 0x7F060539
-			public const int ViewStubCompat_android_id = 2131100985;
+			// aapt resource value: 0x7F070539
+			public const int ViewStubCompat_android_id = 2131166521;
 			
 			// aapt resource value: 0x1
 			public const int ViewStubCompat_android_inflatedId = 1;
@@ -6363,8 +6381,8 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x2
 			public const int ViewStubCompat_android_layout = 2;
 			
-			// aapt resource value: 0x7F060529
-			public const int View_android_focusable = 2131100969;
+			// aapt resource value: 0x7F070529
+			public const int View_android_focusable = 2131166505;
 			
 			// aapt resource value: 0x1
 			public const int View_android_theme = 1;
