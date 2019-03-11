@@ -21,40 +21,26 @@
             android:id="@+id/linearLayout1"
             android:layout_weight="0.25">
 			<TextView
-				android:text="TextView 1"
+				android:text=""
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/text1"
 				android:paddingLeft="20px" />
 			<TextView
-				android:text="TextView 2"
+				android:text=""
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/text2" 				
 			    android:paddingLeft="20px" />
 			<TextView
-				android:text="TextView3"
+				android:text=""
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/text3" 
 			    android:paddingLeft="20px" />
-			<TextView
-				android:text="TextView 4"
-				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/Text4" 
-				android:paddingLeft="20px" />
-			<TextView
-				android:text="TextView 5"
-				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/Text5" 
-				android:paddingLeft="20px" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

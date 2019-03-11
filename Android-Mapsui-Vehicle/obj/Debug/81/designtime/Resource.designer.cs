@@ -2692,12 +2692,6 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F010006
 			public const int text3 = 2130771974;
 			
-			// aapt resource value: 0x7F010007
-			public const int Text4 = 2130771975;
-			
-			// aapt resource value: 0x7F010008
-			public const int Text5 = 2130771976;
-			
 			// aapt resource value: 0x7F0C007E
 			public const int textinput_counter = 2131492990;
 			

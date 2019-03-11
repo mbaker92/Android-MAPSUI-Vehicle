@@ -106,6 +106,7 @@ public class MonoPackageManager {
 class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "Android-Mapsui-Vehicle.dll" comes first in this list. */
+		"Android-Mapsui-Vehicle.dll",
 		"BruTile.dll",
 		"BruTile.MbTiles.dll",
 		"ConcurrentCollections.dll",

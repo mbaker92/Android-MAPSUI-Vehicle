@@ -1,3 +1,6 @@
+Android_Mapsui_Vehicle.MainActivity, Android-Mapsui-Vehicle;md585fa03dc00ec405df5581536a5d8b3a0.MainActivity
+Android_Mapsui_Vehicle.MainActivity;md585fa03dc00ec405df5581536a5d8b3a0.MainActivity
+android_mapsui_vehicle.MainActivity;md585fa03dc00ec405df5581536a5d8b3a0.MainActivity
 Mapsui.UI.Android.MapControl, Mapsui.UI.Android;md5c9c6bce245d1b7c0019d6ddca5bc6a77.MapControl
 Mapsui.UI.Android.MapControl;md5c9c6bce245d1b7c0019d6ddca5bc6a77.MapControl
 mapsui.ui.android.MapControl;md5c9c6bce245d1b7c0019d6ddca5bc6a77.MapControl
