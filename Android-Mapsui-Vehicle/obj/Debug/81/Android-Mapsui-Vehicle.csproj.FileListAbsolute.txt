@@ -4,6 +4,7 @@ D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\bin\Debug\Android_Mapsui_V
 D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\bin\Debug\Android_Mapsui_Vehicle.Android_Mapsui_Vehicle-Signed.apk
 D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\obj\Debug\81\MonoAndroid,Version=v8.1.AssemblyAttributes.cs
 D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\obj\Debug\81\Android-Mapsui-Vehicle.nuget.stamp
+D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\obj\Debug\81\Android-Mapsui-Vehicle.csprojAssemblyReference.cache
 D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\obj\Debug\81\libraryimports.cache.stamp
 D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\obj\Debug\81\res.flag
 D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\obj\Debug\81\Android-Mapsui-Vehicle.csproj.CoreCompileInputs.cache
