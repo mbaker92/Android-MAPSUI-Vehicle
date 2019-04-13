@@ -13,16 +13,5 @@
   <!-- Add menu Item 3 -->
   <item android:id="@+id/menuItem3"
         android:title="@string/menuItem3"/>
-  
-  <item android:id="@+id/menuItem4"
-      android:title="@string/menuItem4"/>
-  
-  <item android:id="@+id/menuItem5"
-      android:title="@string/menuItem5"/>
 
-  <item android:id="@+id/menuItem6"
-    android:title="@string/menuItem6"/>
-  
-  <item android:id="@+id/menuItem7"
-    android:title="@string/menuItem7"/>
 </menu>

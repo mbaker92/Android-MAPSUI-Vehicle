@@ -12,6 +12,8 @@ using Android.Content.PM;
 using Android.Gms.Ads;
 using Android.Content;
 using Android.Views;
+using AlertDialog = Android.App.AlertDialog;
+using System.Collections.Generic;
 
 namespace Android_Mapsui_Vehicle
 {
@@ -23,7 +25,9 @@ namespace Android_Mapsui_Vehicle
         private bool AllowMapToLoad = false;
         public static Point Location = new Point(0, 0);
         private MySettings mainsave;
-
+        private ListView ColorList;
+        private ArrayAdapter<string> ColorAdapter, MeasurementAdapter;
+        private int ListPosition = 0;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,14 +37,11 @@ namespace Android_Mapsui_Vehicle
 
             var id = "ca-app-pub-7805135116630476~8762824299";
             MobileAds.Initialize(ApplicationContext, id);
-
-            System.Diagnostics.Debug.WriteLine("-------------------------------------------------------------------Beginning Ad code");
            
             var adView = FindViewById<AdView>(Resource.Id.adView);
-            var adRequest = new AdRequest.Builder().AddTestDevice("7E1694286B44E13AD4C338D98784FABA").Build();
+            var adRequest = new AdRequest.Builder().AddTestDevice("61BBB1BB35FE0D192638B2A005A2E39A").Build();
            // var adRequest = new AdRequest.Builder().Build();
             adView.LoadAd(adRequest);
-            System.Diagnostics.Debug.WriteLine("---------------------------------------------------------------------Ad Should be Loaded");
 
             // Stop Location Service if it was started previously (Needed for updating if device is rotated since OnCreate is called again)
             StopService();
@@ -137,23 +138,23 @@ namespace Android_Mapsui_Vehicle
 
             mapCtrl.Map.NavigateTo(Location);   // Move Screen to Location of Vehicle
 
-      //      if (mainsave.Measurement == MySettings.MeasurementSystem.Imperial)
-   //         {
+            if (mainsave.Measurement == MySettings.MeasurementSystem.Imperial)
+            {
                 double SpeedtoMPH = test.Speed * 2.239; // Get the MPH Equivalent of Speed's Meters Per Second
                 double SeaLevel = test.Altitude * 3.28; // Get the Ft Equivalent of Altitude's Meters
 
                 speed.Text = "Speed: " + SpeedtoMPH.ToString("0.00") + " MPH";
                 LatLong.Text = "Latitude: " + test.Latitude + " Longitude: " + test.Longitude;
-                Altitude.Text = "Altitude: " + SeaLevel.ToString("0.0") + "Ft";
+                Altitude.Text = "Elevation: " + SeaLevel.ToString("0.0") + "Ft";
 
-     //       }
-      //      else
-      //      {            // Output specific text to the textview
-      //          speed.Text = "Speed: " + test.Speed.ToString("0.00") + " KPH";
-      //          LatLong.Text = "Latitude: " + test.Latitude + " Longitude: " + test.Longitude;
-      //          Altitude.Text = "Altitude: " + test.Altitude.ToString("0.0") + "m";
+            }
+            else
+            {            // Output specific text to the textview
+                speed.Text = "Speed: " + test.Speed.ToString("0.00") + " KPH";
+                LatLong.Text = "Latitude: " + test.Latitude + " Longitude: " + test.Longitude;
+                Altitude.Text = "Elevation: " + test.Altitude.ToString("0.0") + "m";
 
-      //      }
+            }
 
         }
 
@@ -258,68 +259,91 @@ namespace Android_Mapsui_Vehicle
                     }
                 case Resource.Id.menuItem2:
                     {
-                        mainsave.color = MySettings.DotColor.Gray;
-                        MySettings.Save(mainsave);
-                        Intent refresh = new Intent(this, typeof(MainActivity));
-                        StartActivity(refresh);
-                        Finish();
-                        // add your code  
+                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                        alert.SetTitle("Change Icon Color");
+                        View view = LayoutInflater.Inflate(Resource.Layout.ColorLayout, null);
+                        ColorAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItemSingleChoice,mainsave.ColorsAvailable);
+                      
+                        ColorList = (ListView)view.FindViewById(Resource.Id.ColorListView);
+                        ColorList.Adapter = ColorAdapter;
+                        ColorList.ItemClick += colorSelected;
+
+                        ColorList.SetItemChecked(mainsave.IndexColors(), true);
+                        alert.SetPositiveButton("OK", OkColorAction);
+                        alert.SetView(view);
+                        alert.Show();
                         return true;
                     }
                 case Resource.Id.menuItem3:
                     {
-                        mainsave.color = MySettings.DotColor.Red;
-                        MySettings.Save(mainsave);
-                        Intent refresh = new Intent(this, typeof(MainActivity));
-                        StartActivity(refresh);
-                        Finish();
+                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                        alert.SetTitle("Change Measurement System");
+                        View view = LayoutInflater.Inflate(Resource.Layout.ColorLayout, null);
+                        List<string> temp = new List<string> { "Imperial", "Metric" };
+                        MeasurementAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItemSingleChoice, temp);
+
+                        ColorList = (ListView)view.FindViewById(Resource.Id.ColorListView);
+                        ColorList.Adapter = MeasurementAdapter;
+                        if(mainsave.Measurement == MySettings.MeasurementSystem.Imperial)
+                        {
+
+                            ColorList.SetItemChecked(0, true);
+                        }
+                        else
+                        {
+                            ColorList.SetItemChecked(1, true);
+                        }
+                        ColorList.ItemClick += colorSelected;
+                        alert.SetPositiveButton("OK", OkMeasurementAction);
+                        alert.SetView(view);
+                        alert.Show();
+                        //    MySettings.Save(mainsave);
+                        //  Intent refresh = new Intent(this, typeof(MainActivity));
+                        //StartActivity(refresh);
+                        // Finish();
                         // add your code  
                         return true;
                     }
-                case Resource.Id.menuItem4:
-                    {
-                        mainsave.color = MySettings.DotColor.Blue;
-                        MySettings.Save(mainsave);
-                        Intent refresh = new Intent(this, typeof(MainActivity));
-                        StartActivity(refresh);
-                        Finish();
-                        // add your code  
-                        return true;
-                    }
-                case Resource.Id.menuItem5:
-                    {
-                        mainsave.color = MySettings.DotColor.Black;
-                        MySettings.Save(mainsave);
-                        Intent refresh = new Intent(this, typeof(MainActivity));
-                        StartActivity(refresh);
-                        Finish();
-                        // add your code  
-                        return true;
-                    }
-                case Resource.Id.menuItem6:
-                    {
-                        mainsave.color = MySettings.DotColor.Yellow;
-                        MySettings.Save(mainsave);
-                        Intent refresh = new Intent(this, typeof(MainActivity));
-                        StartActivity(refresh);
-                        Finish();
-                        // add your code  
-                        return true;
-                    }
-                case Resource.Id.menuItem7:
-                    {
-                        mainsave.color = MySettings.DotColor.Purple;
-                        MySettings.Save(mainsave);
-                        Intent refresh = new Intent(this, typeof(MainActivity));
-                        StartActivity(refresh);
-                        Finish();
-                        // add your code  
-                        return true;
-                    }
+
             }
 
             return base.OnOptionsItemSelected(item);
         }
+
+        private void colorSelected(object sender, ListView.ItemClickEventArgs e)
+        {
+            ListPosition = e.Position;
+            ColorList.SetItemChecked(e.Position, true);
+        }
+
+        private void OkMeasurementAction(object sender, DialogClickEventArgs e)
+        {
+            if(ListPosition == 0)
+            {
+                mainsave.Measurement = MySettings.MeasurementSystem.Imperial;
+
+            }
+            else
+            {
+                mainsave.Measurement = MySettings.MeasurementSystem.Metric;
+            }
+            MySettings.Save(mainsave);
+        }
+
+            private void OkColorAction(object sender, DialogClickEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Value of ListPosition " + ListPosition);
+            mainsave.color = mainsave.List2DotColor(ListPosition);
+            MySettings.Save(mainsave);
+            Intent refresh = new Intent(this, typeof(MainActivity));
+            StartActivity(refresh);
+            Finish();
+        }
+
+        //   private void ColorSpin(ref View view)
+        // {
+        //       ColorSpinner = (Spinner)view.FindViewById(Resource.Id.ColorSpinner);
+        //}
 
 
 

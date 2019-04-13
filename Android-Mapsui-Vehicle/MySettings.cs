@@ -25,13 +25,58 @@ namespace Android_Mapsui_Vehicle
         public enum DotColor { Red, Green, Blue, Yellow, Purple, Pink, Orange, Black, Gray};
         public MeasurementSystem Measurement;
         public DotColor color;
-
+        public List<string> ColorsAvailable;
         const int VERSION = 1;
 
         public MySettings()
         {
             Measurement = MeasurementSystem.Imperial;
             color = DotColor.Green;
+
+            ColorsAvailable = new List<string>
+            {
+                "Red",
+                "Green",
+                "Blue",
+                "Yellow",
+                "Purple",
+                "Orange",
+                "Black",
+                "Gray"
+            };
+        }
+
+        public int IndexColors()
+        {
+            int temp = 0;
+            switch (color)
+            {
+                case DotColor.Red:
+                    temp = 0; break;
+
+                case DotColor.Green:
+                    temp = 1; break;
+
+                case DotColor.Blue:
+                    temp = 2; break;
+
+                case DotColor.Yellow:
+                    temp = 3; break;
+
+                case DotColor.Purple:
+                    temp = 4; break;
+
+                case DotColor.Orange:
+                    temp = 5; break;
+
+                case DotColor.Black:
+                    temp = 6; break;
+
+                case DotColor.Gray:
+                    temp = 7; break;
+            }
+
+            return temp;
         }
 
         public Color ReturnColor()
@@ -60,6 +105,32 @@ namespace Android_Mapsui_Vehicle
             return Temp;
         }
 
+
+        public DotColor List2DotColor(int Index)
+        {
+            DotColor temp= DotColor.Blue;
+            switch (Index)
+            {
+                case 0:
+                    temp = DotColor.Red; break;
+                case 1:
+                    temp = DotColor.Green; break;
+                case 2:
+                    temp = DotColor.Blue; break;
+                case 3:
+                    temp = DotColor.Yellow; break;
+                case 4:
+                    temp = DotColor.Purple; break;
+                case 5:
+                    temp = DotColor.Orange; break;
+                case 6:
+                    temp = DotColor.Black; break;
+                case 7:
+                    temp = DotColor.Gray; break;
+                    
+            }
+            return temp;
+        }
         public static void Save(MySettings set)
         {
             Stream stream = null;
