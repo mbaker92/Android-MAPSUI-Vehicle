@@ -1,4 +1,13 @@
 <resources>
-    <string name="app_name">Android_Mapsui_Vehicle</string>
+    <string name="app_name">Vehicle Location</string>
     <string name="action_settings">Settings</string>
+  <string name="banner_ad_unit_id">ca-app-pub-7805135116630476/7394558846</string>
+  <string name="menuItem1">Choose Color</string>
+  <string name="menuItem2">Gray</string>
+  <string name="menuItem3">Red</string>
+  <string name="menuItem4">Blue</string>
+  <string name="menuItem5">Black</string>
+  <string name="menuItem6">Yellow</string>
+  <string name="menuItem7">Purple</string>
+
 </resources>

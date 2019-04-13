@@ -1014,6 +1014,80 @@
         "build": {
           "build/MonoAndroid81/Xamarin.Android.Support.Vector.Drawable.targets": {}
         }
+      },
+      "Xamarin.Build.Download/0.4.9": {
+        "type": "package",
+        "build": {
+          "build/Xamarin.Build.Download.props": {},
+          "build/Xamarin.Build.Download.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Ads/60.1142.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Ads.Lite": "[60.1142.1]",
+          "Xamarin.GooglePlayServices.Basement": "[60.1142.1]",
+          "Xamarin.GooglePlayServices.Gass": "[60.1142.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Ads.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Ads.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid80/Xamarin.GooglePlayServices.Ads.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Ads.Lite/60.1142.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Basement": "[60.1142.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Ads.Lite.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Ads.Lite.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid80/Xamarin.GooglePlayServices.Ads.Lite.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/60.1142.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.Compat": "26.0.2",
+          "Xamarin.Android.Support.Core.UI": "26.0.2",
+          "Xamarin.Android.Support.Core.Utils": "26.0.2",
+          "Xamarin.Android.Support.Fragment": "26.0.2",
+          "Xamarin.Android.Support.Media.Compat": "26.0.2",
+          "Xamarin.Build.Download": "0.4.9"
+        },
+        "compile": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Basement.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Basement.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid80/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Gass/60.1142.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Basement": "[60.1142.1]"
+        },
+        "compile": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Gass.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid80/Xamarin.GooglePlayServices.Gass.dll": {}
+        },
+        "build": {
+          "build/MonoAndroid80/Xamarin.GooglePlayServices.Gass.targets": {}
+        }
       }
     }
   },
@@ -4375,6 +4449,77 @@
         "xamarin.android.support.vector.drawable.27.0.2.1.nupkg.sha512",
         "xamarin.android.support.vector.drawable.nuspec"
       ]
+    },
+    "Xamarin.Build.Download/0.4.9": {
+      "sha512": "CxKoLSKdiUUe0UslTcb2ZP7QsC0lf7hwwpGckkHuczRMuD/MjmcXyJGVy4oWa5qbLSM4AW9D9ZvPFue39XVBAg==",
+      "type": "package",
+      "path": "xamarin.build.download/0.4.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/Mono.Cecil.dll",
+        "build/Newtonsoft.Json.dll",
+        "build/System.Net.Http.Formatting.dll",
+        "build/Xamarin.Build.Download.dll",
+        "build/Xamarin.Build.Download.props",
+        "build/Xamarin.Build.Download.targets",
+        "xamarin.build.download.0.4.9.nupkg.sha512",
+        "xamarin.build.download.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Ads/60.1142.1": {
+      "sha512": "ZDujwoHTZ31YDUCM8T1I9Krf3oVWf8iejb/ERfegQH39oQOahnjse2K5Yslln9SI8dACP7SQLfyog+O82UrVPg==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.ads/60.1142.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid80/Xamarin.GooglePlayServices.Ads.targets",
+        "lib/MonoAndroid80/Xamarin.GooglePlayServices.Ads.dll",
+        "xamarin.googleplayservices.ads.60.1142.1.nupkg.sha512",
+        "xamarin.googleplayservices.ads.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Ads.Lite/60.1142.1": {
+      "sha512": "ZW24jjXzuTKWPRl1Ew2XSeKKOmCa9uObwK3Th0wMNGyA+vkILIItTP+91VXfMzyuZJNhML/tPfuygyNOteOdWQ==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.ads.lite/60.1142.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid80/Xamarin.GooglePlayServices.Ads.Lite.targets",
+        "lib/MonoAndroid80/Xamarin.GooglePlayServices.Ads.Lite.dll",
+        "xamarin.googleplayservices.ads.lite.60.1142.1.nupkg.sha512",
+        "xamarin.googleplayservices.ads.lite.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Basement/60.1142.1": {
+      "sha512": "85zCK7rGY/gjznoQHl2J8Asody+vV4gp88IGZJ/FfnOZYo2KMZVdCb2Iw7q7QwsQCrSYiakDYeeugVB7BY6q6w==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.basement/60.1142.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid80/Xamarin.GooglePlayServices.Basement.targets",
+        "build/MonoAndroid80/Xamarin.GooglePlayServices.Tasks.dll",
+        "lib/MonoAndroid80/Xamarin.GooglePlayServices.Basement.dll",
+        "xamarin.googleplayservices.basement.60.1142.1.nupkg.sha512",
+        "xamarin.googleplayservices.basement.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Gass/60.1142.1": {
+      "sha512": "IEaXnZxIeZ/70jgD08M9z9E+sUJjq40XMOJ86MyPh+KbaWDNgWet3hWwjSe1v7PGTH90OQt9ZtWhjtAmg3YgZw==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.gass/60.1142.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoAndroid80/Xamarin.GooglePlayServices.Gass.targets",
+        "lib/MonoAndroid80/Xamarin.GooglePlayServices.Gass.dll",
+        "xamarin.googleplayservices.gass.60.1142.1.nupkg.sha512",
+        "xamarin.googleplayservices.gass.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -4383,7 +4528,8 @@
       "BruTile.MbTiles >= 2.0.2",
       "Mapsui >= 1.4.8",
       "Xam.Plugin.Geolocator >= 4.5.0.6",
-      "Xamarin.Android.Support.Design >= 27.0.2.1"
+      "Xamarin.Android.Support.Design >= 27.0.2.1",
+      "Xamarin.GooglePlayServices.Ads >= 60.1142.1"
     ]
   },
   "packageFolders": {
@@ -4438,6 +4584,10 @@
           "Xamarin.Android.Support.Design": {
             "target": "Package",
             "version": "[27.0.2.1, )"
+          },
+          "Xamarin.GooglePlayServices.Ads": {
+            "target": "Package",
+            "version": "[60.1142.1, )"
           }
         }
       }

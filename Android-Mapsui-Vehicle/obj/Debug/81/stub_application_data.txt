@@ -1,2 +1,2 @@
 android.app.Application
-Android_Mapsui_Vehicle.Android_Mapsui_Vehicle
+com.mcb92.VehicleLocation

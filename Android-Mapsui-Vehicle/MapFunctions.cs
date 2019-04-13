@@ -1,14 +1,5 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Mapsui;
 using Mapsui.Geometries;
 using Mapsui.Layers;
@@ -20,11 +11,11 @@ namespace Android_Mapsui_Vehicle
 {
     class MapFunctions
     {
-        public static Map CreateMap()
+        public static Map CreateMap(ref MySettings Settings)
         {
             Map map = new Map();                                                                    // Declare the map variable
             map.Layers.Add(OpenStreetMap.CreateTileLayer());                                                            // Create map after determining if there is an offline or online one available
-            map.Layers.Add(new AnimatedPointsWithAutoUpdateLayer { Name = "Rater Location" });      // Create the Layer for the Raters Location and add it Layers
+            map.Layers.Add(new AnimatedPointsWithAutoUpdateLayer(ref Settings) { Name = "Vehicle Location" });      // Create the Layer for the Raters Location and add it Layers
             return map;                                                                             // Return the map
 
         }
@@ -35,10 +26,10 @@ namespace Android_Mapsui_Vehicle
         private readonly System.Threading.Timer _timer; // timer used in polling the update data
 
         // Create a Layer that will update the position of the rater using a DynamicMemoryProvider
-        public AnimatedPointsWithAutoUpdateLayer()
+        public AnimatedPointsWithAutoUpdateLayer(ref MySettings settings)
             : base(new DynamicMemoryProvider())
         {
-            Style = new SymbolStyle { Fill = { Color = new Color(107, 244, 66, 255) }, SymbolScale = .5 };  // Set the symbol color and size used to represent the Vehicle on the map
+            Style = new SymbolStyle { Fill = { Color = settings.ReturnColor() }, SymbolScale = .5 };  // Set the symbol color and size used to represent the Vehicle on the map
             _timer = new System.Threading.Timer(arg => UpdateData(), this, 0, 3000);                        // Set the timer to update the data from DynamicMemoryProvider
 
         }

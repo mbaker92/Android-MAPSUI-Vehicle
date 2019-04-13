@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using Plugin.Geolocator;
 using Mapsui.Geometries;
 using Android.Content.PM;
+using Android.Gms.Ads;
+using Android.Content;
+using Android.Views;
 
 namespace Android_Mapsui_Vehicle
 {
@@ -19,12 +22,25 @@ namespace Android_Mapsui_Vehicle
         private TextView speed, LatLong, Altitude;
         private bool AllowMapToLoad = false;
         public static Point Location = new Point(0, 0);
+        private MySettings mainsave;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            var id = "ca-app-pub-7805135116630476~8762824299";
+            MobileAds.Initialize(ApplicationContext, id);
+
+            System.Diagnostics.Debug.WriteLine("-------------------------------------------------------------------Beginning Ad code");
+           
+            var adView = FindViewById<AdView>(Resource.Id.adView);
+            var adRequest = new AdRequest.Builder().AddTestDevice("7E1694286B44E13AD4C338D98784FABA").Build();
+           // var adRequest = new AdRequest.Builder().Build();
+            adView.LoadAd(adRequest);
+            System.Diagnostics.Debug.WriteLine("---------------------------------------------------------------------Ad Should be Loaded");
 
             // Stop Location Service if it was started previously (Needed for updating if device is rotated since OnCreate is called again)
             StopService();
@@ -37,18 +53,22 @@ namespace Android_Mapsui_Vehicle
 
 
             FirstRun(); // Check if GPS Function enabled
-
-            mapCtrl.Map = MapFunctions.CreateMap(); // Create the Map
+ //           mainsave = MySettings.Load();
 
         }
 
         // Gets called after OnCreate() according to Android Lifecycle. Checks and Starts Location service if allowed
         protected override void OnResume()
         {
+            mainsave = MySettings.Load();
             if (AllowMapToLoad == true) // If Location Service is Allowed
             {
                 LocService();   // Start Location Service
             }
+ 
+            mapCtrl.Map = MapFunctions.CreateMap(ref mainsave); // Create the Map
+            mapCtrl.Map.NavigateTo(18);         // Set Inital Zoom Level to be Fairly Close
+
             base.OnResume();
         }
 
@@ -56,6 +76,7 @@ namespace Android_Mapsui_Vehicle
         protected override void OnPause()
         {
             StopService();
+            MySettings.Save(mainsave);
             base.OnPause();
         }
 
@@ -63,6 +84,8 @@ namespace Android_Mapsui_Vehicle
         public override void OnBackPressed()
         {
             StopService();  // Stop the Location service if it running
+            MySettings.Save(mainsave);
+
             base.OnBackPressed();
         }
 
@@ -114,19 +137,29 @@ namespace Android_Mapsui_Vehicle
 
             mapCtrl.Map.NavigateTo(Location);   // Move Screen to Location of Vehicle
 
-            double SpeedtoMPH = test.Speed * 2.239; // Get the MPH Equivalent of Speed's Meters Per Second
+      //      if (mainsave.Measurement == MySettings.MeasurementSystem.Imperial)
+   //         {
+                double SpeedtoMPH = test.Speed * 2.239; // Get the MPH Equivalent of Speed's Meters Per Second
+                double SeaLevel = test.Altitude * 3.28; // Get the Ft Equivalent of Altitude's Meters
 
-            // Output specific text to the textview
-            speed.Text = "Speed: " + SpeedtoMPH.ToString() + " MPH";
-            LatLong.Text = "Latitude: " + test.Latitude + " Longitude: " + test.Longitude;
-            Altitude.Text = "Altitude: " + test.Altitude + "m";
+                speed.Text = "Speed: " + SpeedtoMPH.ToString("0.00") + " MPH";
+                LatLong.Text = "Latitude: " + test.Latitude + " Longitude: " + test.Longitude;
+                Altitude.Text = "Altitude: " + SeaLevel.ToString("0.0") + "Ft";
+
+     //       }
+      //      else
+      //      {            // Output specific text to the textview
+      //          speed.Text = "Speed: " + test.Speed.ToString("0.00") + " KPH";
+      //          LatLong.Text = "Latitude: " + test.Latitude + " Longitude: " + test.Longitude;
+      //          Altitude.Text = "Altitude: " + test.Altitude.ToString("0.0") + "m";
+
+      //      }
 
         }
 
         // Used to start the location service 
         private void LocService()
         {
-            mapCtrl.Map.NavigateTo(18);         // Set Inital Zoom Level to be Fairly Close
             System.Threading.Tasks.Task.Run(async () =>
             {
                 System.Diagnostics.Debug.WriteLine("-------------STARTING LOCATION SERVICE---------------");
@@ -137,6 +170,41 @@ namespace Android_Mapsui_Vehicle
         // Checks if we have GPS permissions 
         private void FirstRun()
         {
+            const string PREFS_NAME = "PrefsFile";
+            const string PrefVersionCodeKey = "version_code";
+            int DoesntExist = -1;
+
+            // Get Current Version of Application
+            int currentVersionCode = Application.Context.PackageManager.GetPackageInfo(Application.Context.ApplicationContext.PackageName, 0).VersionCode;
+
+
+            ISharedPreferences prefs = GetSharedPreferences(PREFS_NAME, FileCreationMode.Private);
+            int savedVersionCode = prefs.GetInt(PrefVersionCodeKey, DoesntExist);
+
+            // If current version then its a normal run.
+            if (currentVersionCode == savedVersionCode)
+            {
+                mainsave = MySettings.Load();
+            }
+            else if (savedVersionCode == DoesntExist)
+            {
+                // New Install or User Cleared Shared Preferences
+                mainsave = new MySettings();
+                System.Diagnostics.Debug.WriteLine("Should Have Created a new Mainsave");
+                MySettings.Save(mainsave);
+
+            }
+            else if (currentVersionCode > savedVersionCode)
+            {
+                mainsave = MySettings.Load();
+                // Upgrade of Application
+            }
+
+            // Update shared preferences with current version code
+            prefs.Edit().PutInt(PrefVersionCodeKey, currentVersionCode).Apply();
+
+
+
             if (CheckSelfPermission(Android.Manifest.Permission.AccessFineLocation) != (int)Permission.Granted)
             {
                 System.Threading.Tasks.Task.Run(() =>
@@ -155,7 +223,12 @@ namespace Android_Mapsui_Vehicle
         // Function to get the results of from the CheckSelfPermission function in the FirstRun function
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
-            if (permissions[0] == "android.permission.ACCESS_FINE_LOCATION")
+
+
+
+
+
+        if (permissions[0] == "android.permission.ACCESS_FINE_LOCATION")
             {
                 if (grantResults[0] == Permission.Granted)
                 {
@@ -165,5 +238,90 @@ namespace Android_Mapsui_Vehicle
                 }
             }
         }
+
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            // set the menu layout on Main Activity  
+            MenuInflater.Inflate(Resource.Menu.TpMenu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.menuItem1:
+                    {
+                        // add your code  
+                        return true;
+                    }
+                case Resource.Id.menuItem2:
+                    {
+                        mainsave.color = MySettings.DotColor.Gray;
+                        MySettings.Save(mainsave);
+                        Intent refresh = new Intent(this, typeof(MainActivity));
+                        StartActivity(refresh);
+                        Finish();
+                        // add your code  
+                        return true;
+                    }
+                case Resource.Id.menuItem3:
+                    {
+                        mainsave.color = MySettings.DotColor.Red;
+                        MySettings.Save(mainsave);
+                        Intent refresh = new Intent(this, typeof(MainActivity));
+                        StartActivity(refresh);
+                        Finish();
+                        // add your code  
+                        return true;
+                    }
+                case Resource.Id.menuItem4:
+                    {
+                        mainsave.color = MySettings.DotColor.Blue;
+                        MySettings.Save(mainsave);
+                        Intent refresh = new Intent(this, typeof(MainActivity));
+                        StartActivity(refresh);
+                        Finish();
+                        // add your code  
+                        return true;
+                    }
+                case Resource.Id.menuItem5:
+                    {
+                        mainsave.color = MySettings.DotColor.Black;
+                        MySettings.Save(mainsave);
+                        Intent refresh = new Intent(this, typeof(MainActivity));
+                        StartActivity(refresh);
+                        Finish();
+                        // add your code  
+                        return true;
+                    }
+                case Resource.Id.menuItem6:
+                    {
+                        mainsave.color = MySettings.DotColor.Yellow;
+                        MySettings.Save(mainsave);
+                        Intent refresh = new Intent(this, typeof(MainActivity));
+                        StartActivity(refresh);
+                        Finish();
+                        // add your code  
+                        return true;
+                    }
+                case Resource.Id.menuItem7:
+                    {
+                        mainsave.color = MySettings.DotColor.Purple;
+                        MySettings.Save(mainsave);
+                        Intent refresh = new Intent(this, typeof(MainActivity));
+                        StartActivity(refresh);
+                        Finish();
+                        // add your code  
+                        return true;
+                    }
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
+
+
     }
  }

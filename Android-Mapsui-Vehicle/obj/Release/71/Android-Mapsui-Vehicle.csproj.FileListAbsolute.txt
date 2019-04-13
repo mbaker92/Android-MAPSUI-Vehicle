@@ -1,0 +1,5 @@
+D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\obj\Release\71\MonoAndroid,Version=v7.1.AssemblyAttributes.cs
+D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\obj\Release\71\Android-Mapsui-Vehicle.nuget.stamp
+D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\obj\Release\71\Android-Mapsui-Vehicle.csprojAssemblyReference.cache
+D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\obj\Release\71\libraryimports.cache.stamp
+D:\Code\Android-MAPSUI-Vehicle\Android-Mapsui-Vehicle\obj\Release\71\res.flag
