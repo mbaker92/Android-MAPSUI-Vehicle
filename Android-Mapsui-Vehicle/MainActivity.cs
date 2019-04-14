@@ -28,7 +28,7 @@ namespace Android_Mapsui_Vehicle
         private ListView ColorList;
         private ArrayAdapter<string> ColorAdapter, MeasurementAdapter;
         private int ListPosition = 0;
-
+        private string Speed, lat, lon, elev;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -191,7 +191,6 @@ namespace Android_Mapsui_Vehicle
             {
                 // New Install or User Cleared Shared Preferences
                 mainsave = new MySettings();
-                System.Diagnostics.Debug.WriteLine("Should Have Created a new Mainsave");
                 MySettings.Save(mainsave);
 
             }
@@ -270,6 +269,7 @@ namespace Android_Mapsui_Vehicle
 
                         ColorList.SetItemChecked(mainsave.IndexColors(), true);
                         alert.SetPositiveButton("OK", OkColorAction);
+                        alert.SetCancelable(false);
                         alert.SetView(view);
                         alert.Show();
                         return true;
@@ -295,13 +295,9 @@ namespace Android_Mapsui_Vehicle
                         }
                         ColorList.ItemClick += colorSelected;
                         alert.SetPositiveButton("OK", OkMeasurementAction);
+                        alert.SetCancelable(false);
                         alert.SetView(view);
                         alert.Show();
-                        //    MySettings.Save(mainsave);
-                        //  Intent refresh = new Intent(this, typeof(MainActivity));
-                        //StartActivity(refresh);
-                        // Finish();
-                        // add your code  
                         return true;
                     }
 
@@ -334,18 +330,11 @@ namespace Android_Mapsui_Vehicle
         {
             System.Diagnostics.Debug.WriteLine("Value of ListPosition " + ListPosition);
             mainsave.color = mainsave.List2DotColor(ListPosition);
+
             MySettings.Save(mainsave);
             Intent refresh = new Intent(this, typeof(MainActivity));
             StartActivity(refresh);
             Finish();
         }
-
-        //   private void ColorSpin(ref View view)
-        // {
-        //       ColorSpinner = (Spinner)view.FindViewById(Resource.Id.ColorSpinner);
-        //}
-
-
-
     }
  }
