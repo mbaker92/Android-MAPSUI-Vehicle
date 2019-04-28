@@ -35,14 +35,6 @@ namespace Android_Mapsui_Vehicle
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            var id = "ca-app-pub-7805135116630476~8762824299";
-            MobileAds.Initialize(ApplicationContext, id);
-           
-            var adView = FindViewById<AdView>(Resource.Id.adView);
-            var adRequest = new AdRequest.Builder().AddTestDevice("61BBB1BB35FE0D192638B2A005A2E39A").Build();
-           // var adRequest = new AdRequest.Builder().Build();
-            adView.LoadAd(adRequest);
-
             // Stop Location Service if it was started previously (Needed for updating if device is rotated since OnCreate is called again)
             StopService();
 

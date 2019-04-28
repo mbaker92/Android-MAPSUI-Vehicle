@@ -3350,9 +3350,6 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x1
 			public const int adjust_width = 1;
 			
-			// aapt resource value: 0x7F010007
-			public const int adView = 2130771975;
-			
 			// aapt resource value: 0x1
 			public const int ad_container = 1;
 			
@@ -3494,8 +3491,8 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x1
 			public const int classic = 1;
 			
-			// aapt resource value: 0x7F010008
-			public const int ColorListView = 2130771976;
+			// aapt resource value: 0x7F010007
+			public const int ColorListView = 2130771975;
 			
 			// aapt resource value: 0x1
 			public const int contact = 1;
@@ -3743,14 +3740,14 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F0C0043
 			public const int media_actions = 2131492931;
 			
+			// aapt resource value: 0x7F010008
+			public const int menuItem1 = 2130771976;
+			
 			// aapt resource value: 0x7F010009
-			public const int menuItem1 = 2130771977;
+			public const int menuItem2 = 2130771977;
 			
 			// aapt resource value: 0x7F010010
-			public const int menuItem2 = 2130771984;
-			
-			// aapt resource value: 0x7F010011
-			public const int menuItem3 = 2130771985;
+			public const int menuItem3 = 2130771984;
 			
 			// aapt resource value: 0x7F0C0044
 			public const int message = 2131492932;
@@ -4553,14 +4550,11 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x7F15001E
 			public const int appbar_scrolling_view_behavior = 2132082718;
 			
-			// aapt resource value: 0x7F060009
-			public const int ApplicationName = 2131099657;
+			// aapt resource value: 0x7F060008
+			public const int ApplicationName = 2131099656;
 			
 			// aapt resource value: 0x7F060002
 			public const int app_name = 2131099650;
-			
-			// aapt resource value: 0x7F060004
-			public const int banner_ad_unit_id = 2131099652;
 			
 			// aapt resource value: 0x7F15001F
 			public const int bottom_sheet_behavior = 2132082719;
@@ -4745,20 +4739,20 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x1
 			public const int gcm_fallback_notification_channel_label = 1;
 			
-			// aapt resource value: 0x7F060008
-			public const int Hello = 2131099656;
+			// aapt resource value: 0x7F060007
+			public const int Hello = 2131099655;
 			
 			// aapt resource value: 0x1
 			public const int license_content_error = 1;
 			
+			// aapt resource value: 0x7F060004
+			public const int menuItem1 = 2131099652;
+			
 			// aapt resource value: 0x7F060005
-			public const int menuItem1 = 2131099653;
+			public const int menuItem2 = 2131099653;
 			
 			// aapt resource value: 0x7F060006
-			public const int menuItem2 = 2131099654;
-			
-			// aapt resource value: 0x7F060007
-			public const int menuItem3 = 2131099655;
+			public const int menuItem3 = 2131099654;
 			
 			// aapt resource value: 0x1
 			public const int no_licenses_available = 1;
@@ -4790,23 +4784,23 @@ namespace Android_Mapsui_Vehicle
 			// aapt resource value: 0x1
 			public const int preferences_license_summary = 1;
 			
+			// aapt resource value: 0x7F060048
+			public const int s1 = 2131099720;
+			
 			// aapt resource value: 0x7F060049
-			public const int s1 = 2131099721;
+			public const int s2 = 2131099721;
 			
 			// aapt resource value: 0x7F060050
-			public const int s2 = 2131099728;
+			public const int s3 = 2131099728;
 			
 			// aapt resource value: 0x7F060051
-			public const int s3 = 2131099729;
+			public const int s4 = 2131099729;
 			
 			// aapt resource value: 0x7F060052
-			public const int s4 = 2131099730;
+			public const int s5 = 2131099730;
 			
 			// aapt resource value: 0x7F060053
-			public const int s5 = 2131099731;
-			
-			// aapt resource value: 0x7F060054
-			public const int s6 = 2131099732;
+			public const int s6 = 2131099731;
 			
 			// aapt resource value: 0x7F150026
 			public const int search_menu_title = 2132082726;

@@ -42,13 +42,6 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/text3" 
 			    android:paddingLeft="20px" />
-			<com.google.android.gms.ads.AdView
-		        android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                ads:adSize="SMART_BANNER"
-                ads:adUnitId="@string/banner_ad_unit_id">
-			</com.google.android.gms.ads.AdView>
         </LinearLayout>
     </LinearLayout>
 
