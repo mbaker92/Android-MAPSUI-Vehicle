@@ -33,6 +33,13 @@
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:id="@+id/MaxSpeed" 				
+			    android:paddingLeft="20px" />
+			<TextView
+				android:text=""
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
 				android:id="@+id/text2" 				
 			    android:paddingLeft="20px" />
 			<TextView

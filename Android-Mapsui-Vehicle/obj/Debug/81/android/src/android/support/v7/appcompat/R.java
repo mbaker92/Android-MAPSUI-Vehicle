@@ -2983,6 +2983,7 @@ containing a value of this type.
         public static int ColorListView=0x7f0b0090;
         public static int FUNCTION=0x7f0b0034;
         public static int META=0x7f0b0035;
+        public static int MaxSpeed=0x7f0b008e;
         public static int SHIFT=0x7f0b0036;
         public static int SYM=0x7f0b0037;
         public static int action0=0x7f0b00a2;
@@ -3005,7 +3006,6 @@ containing a value of this type.
         public static int action_text=0x7f0b00a1;
         public static int actions=0x7f0b00af;
         public static int activity_chooser_view_content=0x7f0b005d;
-        public static int adView=0x7f0b008f;
         public static int add=0x7f0b0027;
         public static int alertTitle=0x7f0b0070;
         public static int all=0x7f0b0052;
@@ -3137,7 +3137,7 @@ containing a value of this type.
         public static int text=0x7f0b001a;
         public static int text1=0x7f0b008d;
         public static int text2=0x7f0b001b;
-        public static int text3=0x7f0b008e;
+        public static int text3=0x7f0b008f;
         public static int textSpacerNoButtons=0x7f0b006a;
         public static int textSpacerNoTitle=0x7f0b0069;
         public static int text_input_password_toggle=0x7f0b009e;
@@ -3283,13 +3283,12 @@ containing a value of this type.
         public static int action_settings=0x7f080031;
         public static int app_name=0x7f080030;
         public static int appbar_scrolling_view_behavior=0x7f080025;
-        public static int banner_ad_unit_id=0x7f080032;
         public static int bottom_sheet_behavior=0x7f080026;
         public static int character_counter_pattern=0x7f080027;
         public static int common_google_play_services_unknown_issue=0x7f080000;
-        public static int menuItem1=0x7f080033;
-        public static int menuItem2=0x7f080034;
-        public static int menuItem3=0x7f080035;
+        public static int menuItem1=0x7f080032;
+        public static int menuItem2=0x7f080033;
+        public static int menuItem3=0x7f080034;
         public static int password_toggle_content_description=0x7f080028;
         public static int path_password_eye=0x7f080029;
         public static int path_password_eye_mask_strike_through=0x7f08002a;

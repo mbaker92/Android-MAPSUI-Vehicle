@@ -14,6 +14,7 @@ using Android.Content;
 using Android.Views;
 using AlertDialog = Android.App.AlertDialog;
 using System.Collections.Generic;
+using Mapsui.Styles;
 
 namespace Android_Mapsui_Vehicle
 {
@@ -21,14 +22,16 @@ namespace Android_Mapsui_Vehicle
     public class MainActivity : AppCompatActivity
     {
         private MapControl mapCtrl;
-        private TextView speed, LatLong, Altitude;
+        private TextView speed, LatLong, Altitude, MaxSpeed;
         private bool AllowMapToLoad = false;
         public static Point Location = new Point(0, 0);
         private MySettings mainsave;
         private ListView ColorList;
         private ArrayAdapter<string> ColorAdapter, MeasurementAdapter;
         private int ListPosition = 0;
-        private string Speed, lat, lon, elev;
+        private double Speed, elev;
+        private double MaxSpeedFloat = 0;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -43,10 +46,9 @@ namespace Android_Mapsui_Vehicle
             speed = FindViewById<TextView>(Resource.Id.text1);
             LatLong = FindViewById<TextView>(Resource.Id.text2);
             Altitude = FindViewById<TextView>(Resource.Id.text3);
-
+            MaxSpeed = FindViewById<TextView>(Resource.Id.MaxSpeed);
 
             FirstRun(); // Check if GPS Function enabled
- //           mainsave = MySettings.Load();
 
         }
 
@@ -58,9 +60,20 @@ namespace Android_Mapsui_Vehicle
             {
                 LocService();   // Start Location Service
             }
- 
-            mapCtrl.Map = MapFunctions.CreateMap(ref mainsave); // Create the Map
-            mapCtrl.Map.NavigateTo(18);         // Set Inital Zoom Level to be Fairly Close
+            System.Threading.Tasks.Task.Run(() =>
+            {
+                mapCtrl.Map = MapFunctions.CreateMap(ref mainsave); // Create the Map
+                mapCtrl.Map.NavigateTo(18);         // Set Inital Zoom Level to be Fairly Close
+            });
+            if (mainsave.Measurement == MySettings.MeasurementSystem.Imperial)
+            {
+                MaxSpeed.Text = "Max Speed: " + MaxSpeedFloat + " MPH";
+            }
+            else
+            {
+
+                MaxSpeed.Text = "Max Speed: " + MaxSpeedFloat + " KPH";
+            }
 
             base.OnResume();
         }
@@ -100,7 +113,8 @@ namespace Android_Mapsui_Vehicle
             {
                 await CrossGeolocator.Current.StopListeningAsync(); // Stop location service
             }
-            catch {
+            catch
+            {
                 // If Location Service is not started
             }
         }
@@ -132,19 +146,31 @@ namespace Android_Mapsui_Vehicle
 
             if (mainsave.Measurement == MySettings.MeasurementSystem.Imperial)
             {
-                double SpeedtoMPH = test.Speed * 2.239; // Get the MPH Equivalent of Speed's Meters Per Second
-                double SeaLevel = test.Altitude * 3.28; // Get the Ft Equivalent of Altitude's Meters
-
-                speed.Text = "Speed: " + SpeedtoMPH.ToString("0.00") + " MPH";
+                Speed = test.Speed * 2.239; // Get the MPH Equivalent of Speed's Meters Per Second
+                elev = test.Altitude * 3.28; // Get the Ft Equivalent of Altitude's Meters
+                if (Speed > MaxSpeedFloat)
+                {
+                    MaxSpeedFloat = Speed;
+                    MaxSpeed.Text = "Max Speed: " + MaxSpeedFloat.ToString("0.00") + " MPH";
+                }
+                speed.Text = "Speed: " + Speed.ToString("0.00") + " MPH";
                 LatLong.Text = "Latitude: " + test.Latitude + " Longitude: " + test.Longitude;
-                Altitude.Text = "Elevation: " + SeaLevel.ToString("0.0") + "Ft";
+                Altitude.Text = "Elevation: " + elev.ToString("0.0") + "Ft";
 
             }
             else
-            {            // Output specific text to the textview
-                speed.Text = "Speed: " + test.Speed.ToString("0.00") + " KPH";
+            {
+                Speed = test.Speed * 3.6;
+                if (Speed > MaxSpeedFloat)
+                {
+                    MaxSpeedFloat = Speed;
+                    MaxSpeed.Text = "Max Speed: " + MaxSpeedFloat.ToString("0.00") + " KPH";
+                }
+                elev = test.Altitude;
+                // Output specific text to the textview
+                speed.Text = "Speed: " + Speed.ToString("0.00") + " KPH";
                 LatLong.Text = "Latitude: " + test.Latitude + " Longitude: " + test.Longitude;
-                Altitude.Text = "Elevation: " + test.Altitude.ToString("0.0") + "m";
+                Altitude.Text = "Elevation: " + elev.ToString("0.0") + "m";
 
             }
 
@@ -215,12 +241,7 @@ namespace Android_Mapsui_Vehicle
         // Function to get the results of from the CheckSelfPermission function in the FirstRun function
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
-
-
-
-
-
-        if (permissions[0] == "android.permission.ACCESS_FINE_LOCATION")
+            if (permissions[0] == "android.permission.ACCESS_FINE_LOCATION")
             {
                 if (grantResults[0] == Permission.Granted)
                 {
@@ -250,33 +271,37 @@ namespace Android_Mapsui_Vehicle
                     }
                 case Resource.Id.menuItem2:
                     {
+                        // Create a Popup that will allow the user to choose a new color for there Location Dot.
                         AlertDialog.Builder alert = new AlertDialog.Builder(this);
                         alert.SetTitle("Change Icon Color");
                         View view = LayoutInflater.Inflate(Resource.Layout.ColorLayout, null);
-                        ColorAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItemSingleChoice,mainsave.ColorsAvailable);
-                      
+                        ColorAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItemSingleChoice, mainsave.ColorsAvailable);
+
+                        
                         ColorList = (ListView)view.FindViewById(Resource.Id.ColorListView);
                         ColorList.Adapter = ColorAdapter;
                         ColorList.ItemClick += colorSelected;
 
-                        ColorList.SetItemChecked(mainsave.IndexColors(), true);
-                        alert.SetPositiveButton("OK", OkColorAction);
+                        ColorList.SetItemChecked(mainsave.IndexColors(), true); // Get the currently selected color and have it selected
+                        alert.SetPositiveButton("OK", OkColorAction);   // Assign what happens when the user clicks ok.
                         alert.SetCancelable(false);
                         alert.SetView(view);
-                        alert.Show();
+                        alert.Show();   // Show Popup
                         return true;
                     }
                 case Resource.Id.menuItem3:
                     {
+                        // Create popup for if the user wants the units in MPH/Feet or KPH/Meters
                         AlertDialog.Builder alert = new AlertDialog.Builder(this);
                         alert.SetTitle("Change Measurement System");
                         View view = LayoutInflater.Inflate(Resource.Layout.ColorLayout, null);
                         List<string> temp = new List<string> { "Imperial", "Metric" };
                         MeasurementAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItemSingleChoice, temp);
 
+                        // Determine currently selected unit system
                         ColorList = (ListView)view.FindViewById(Resource.Id.ColorListView);
                         ColorList.Adapter = MeasurementAdapter;
-                        if(mainsave.Measurement == MySettings.MeasurementSystem.Imperial)
+                        if (mainsave.Measurement == MySettings.MeasurementSystem.Imperial)
                         {
 
                             ColorList.SetItemChecked(0, true);
@@ -285,6 +310,8 @@ namespace Android_Mapsui_Vehicle
                         {
                             ColorList.SetItemChecked(1, true);
                         }
+
+                        
                         ColorList.ItemClick += colorSelected;
                         alert.SetPositiveButton("OK", OkMeasurementAction);
                         alert.SetCancelable(false);
@@ -298,35 +325,60 @@ namespace Android_Mapsui_Vehicle
             return base.OnOptionsItemSelected(item);
         }
 
+        // Called when new color is selected from the list.
         private void colorSelected(object sender, ListView.ItemClickEventArgs e)
         {
             ListPosition = e.Position;
             ColorList.SetItemChecked(e.Position, true);
         }
 
+        // Ok Button action for changing the Units
         private void OkMeasurementAction(object sender, DialogClickEventArgs e)
         {
-            if(ListPosition == 0)
+            if (ListPosition == 0)
             {
+                // If switching from metric to Imperial then convert all the text on screen.
+                if (mainsave.Measurement == MySettings.MeasurementSystem.Metric)
+                {
+                    MaxSpeedFloat = MaxSpeedFloat * .621371;
+                    Speed = Speed * .621371;
+                    MaxSpeed.Text = "Max Speed: " + MaxSpeedFloat.ToString("0.00") + " MPH";
+                    speed.Text = "Speed: " + Speed.ToString("0.00") + " MPH";
+                    elev = elev * 3.28; // Get the Ft Equivalent of Altitude's Meters
+                    Altitude.Text = "Elevation: " + elev.ToString("0.0") + "Ft";
+                }
+                // Change unit system in the User settings
                 mainsave.Measurement = MySettings.MeasurementSystem.Imperial;
 
             }
             else
             {
+                // If switching from imperial to metric then convert all the text on screen
+                if (mainsave.Measurement == MySettings.MeasurementSystem.Imperial)
+                {
+                    MaxSpeedFloat = MaxSpeedFloat * 1.60934;
+                    Speed = Speed * 1.60934;
+                    MaxSpeed.Text = "Max Speed: " + MaxSpeedFloat.ToString("0.00") + " KPH";
+                    speed.Text = "Speed: " + Speed.ToString("0.00") + " KPH";
+                    elev = elev * .3048;
+                    Altitude.Text = "Elevation: " + elev.ToString("0.0") + "m";
+                }
+                // Change unit system in user settings
                 mainsave.Measurement = MySettings.MeasurementSystem.Metric;
             }
             MySettings.Save(mainsave);
         }
-
-            private void OkColorAction(object sender, DialogClickEventArgs e)
+        // Called when the user clicks on OK for the Color selector dialog
+        private void OkColorAction(object sender, DialogClickEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Value of ListPosition " + ListPosition);
+            // Change color in user settings
             mainsave.color = mainsave.List2DotColor(ListPosition);
 
+            // Save user settings
             MySettings.Save(mainsave);
-            Intent refresh = new Intent(this, typeof(MainActivity));
-            StartActivity(refresh);
-            Finish();
+
+            // Change the dot on the map to the new color
+            mapCtrl.Map.Layers[1].Style = new SymbolStyle { Fill = { Color = mainsave.ReturnColor() }, SymbolScale = .4 };
         }
     }
- }
+}
